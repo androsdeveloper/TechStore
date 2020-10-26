@@ -1,0 +1,32 @@
+
+  <div style="width:80%; align-content: center;" *ngIf="(product$ | async) as product ">
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                {{ product.title }}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{ product.price | currency }}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <div class="crop-image">
+            <div style="max-width: 100%; text-align:center;margin:0; padding:0;">
+                <ng-image-slider #nav
+                  [images]="imageObject"
+                  [infinite]="false"
+                  [autoSlide]="1"
+                  [imageSize]="{width: '25%', height: 200}"
+                  slideImage="1"></ng-image-slider>
+              </div>
+        </div>
+        
+        <mat-card-content>
+            <p>{{ product.description | slice:0:10 }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="createProduct()">Crear</button>
+            <button (click)="updateProduct()">Update</button>
+            <button (click)="deleteProduct()">Delete</button>
+        </mat-card-actions>
+    </mat-card>

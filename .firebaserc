@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tech-st": {
+      "hosting": {
+        "TechStore": [
+          "tech-st"
+        ]
+      }
+    }
+  }
+}
